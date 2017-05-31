@@ -1,0 +1,82 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <!--  {% assign root = "." %}-->
+
+  <!-- Site Properties -->
+  <title>Neatastic - blog</title>
+
+  <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css"  href="/assets/css/main.css" />
+
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+  <script src="/semantic/dist/semantic.min.js"></script>
+  {% seo %}
+</head>
+<body class="pushable">
+  <!-- Sidebar Menu -->
+  <div class="ui very wide left vertical sidebar visible  inverted menu">
+    <a class="ui header item" href="/">
+      <object id="logo" type="image/svg+xml" data="/assets/images/logo.svg" style="visibility:hidden;"  onerror="this.data='/assets/images/logo.png'"></object>
+    </a>
+
+  </div>
+ <!-- Page Contents -->
+  <div class="pusher">
+
+      {{ content }}
+
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+          <div class="three wide column">
+            <h4 class="ui inverted header">A propos</h4>
+            <div class="ui inverted link list">
+              <a href="/sitemap.xml" class="item">Carte du site</a>
+              <a href="/feed.xml" class="item">Flux RSS (Atom)</a>
+              <a onclick="$('#credits').modal('show')" class="item">Crédits</a>
+              <a onclick="$('#contact').modal('show')"  class="item">Nous contacter</a>
+            </div>
+          </div>
+          <div class="three wide column">
+            <h4 class="ui inverted header">Favoris</h4>
+            <div class="ui inverted link list">
+              <a href="http://www.cicts.uevora.pt/RIPRES" target="_blank" class="item">RIPRES</a>
+              <a href="http://www.renirs-cemers-mexico.org/" target="_blank" class="item">RENIRS – Mexico</a>
+              <a href="http://www.sr-indonesia.org/en/" target="_blank" class="item">CSR – Indonesia</a>
+              <a href="http://www.lse.ac.uk/socialPsychology/Home.aspx" target="_blank" class="item">Psychology@LSE</a>
+              <a href="http://www.geirso.uqam.ca/" target="_blank" class="item">GEIRSO Montréal</a>
+              <a href="http://www.centromoscovici.unb.br/" target="_blank" class="item">Centro Moscovici – Brasília</a>
+              <a href="http://www.fcc.org.br/pesquisa/ciers.html" target="_blank" class="item">CIERS-Ed Sao Paulo</a>
+              <a href="http://greps.univ-lyon2.fr/" target="_blank" class="item">Labo GRePS – Univ. Lyon 2</a>
+              <a href="http://www.lps-aix.com/" target="_blank" class="item">Labo LPS-AMU</a>
+            </div>
+          </div>
+          <div class="seven wide column">
+            <h4 class="ui inverted header">Footer Header</h4>
+            <p>Il faudra décider de ce qu'on met ici.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if page.pill == 4 %}
+<script src="/assets/js/easp.js"></script>
+{% endif %}
+</body>
+
+</html>
