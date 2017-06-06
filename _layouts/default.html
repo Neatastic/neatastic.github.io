@@ -4,6 +4,7 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <!-- Standard Meta -->
   <meta charset="utf-8" />
@@ -15,68 +16,85 @@ layout: compress
   <title>Neatastic - blog</title>
 
   <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
-  <link rel="stylesheet" type="text/css"  href="/assets/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
 
-  <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
 
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="/semantic/dist/semantic.min.js"></script>
+  <script src="/assets/js/main.js"></script>
   {% seo %}
 </head>
-<body class="pushable">
+
+<body onmousemove="moveEyes(event);" class="pushable">
+
   <!-- Sidebar Menu -->
-  <div class="ui very wide left vertical sidebar visible  inverted menu">
-    <a class="ui header item" href="/">
-      <object id="logo" type="image/svg+xml" data="/assets/images/logo.svg" style="visibility:hidden;"  onerror="this.data='/assets/images/logo.png'"></object>
-    </a>
-
+  <div class="ui left vertical sidebar inverted menu">
+    {% include menu.html sidebar=true %}
   </div>
- <!-- Page Contents -->
+  <!-- Sidebar Button -->
+  <div class="ui right attached toggle right fixed button centered" onclick="$('.ui.sidebar').sidebar('show');">
+    <img class="mobile-logo-image" src="/assets/images/logo.png" alt="" >
+    <img class="mobile-logo-image-hover" src="/assets/images/logo-dark.png" alt="" >
+
+    <p class="text">menu</p>
+  </div>
+  <!-- Page Contents -->
   <div class="pusher">
-
-      {{ content }}
-
-    <div class="ui inverted vertical footer segment">
-      <div class="ui container">
-        <div class="ui stackable inverted divided equal height stackable grid">
-          <div class="three wide column">
-            <h4 class="ui inverted header">A propos</h4>
-            <div class="ui inverted link list">
-              <a href="/sitemap.xml" class="item">Carte du site</a>
-              <a href="/feed.xml" class="item">Flux RSS (Atom)</a>
-              <a onclick="$('#credits').modal('show')" class="item">Crédits</a>
-              <a onclick="$('#contact').modal('show')"  class="item">Nous contacter</a>
-            </div>
+    <div class="main-layout">
+      <div class="left-nav">
+        {% include menu.html sidebar=false %}
+      </div>
+      <div class="right-content">
+        <h1 class="ui centered inverted header blog-title fixed top sticky">
+          <div class="sub header">
+            NEATASTIC
           </div>
-          <div class="three wide column">
-            <h4 class="ui inverted header">Favoris</h4>
-            <div class="ui inverted link list">
-              <a href="http://www.cicts.uevora.pt/RIPRES" target="_blank" class="item">RIPRES</a>
-              <a href="http://www.renirs-cemers-mexico.org/" target="_blank" class="item">RENIRS – Mexico</a>
-              <a href="http://www.sr-indonesia.org/en/" target="_blank" class="item">CSR – Indonesia</a>
-              <a href="http://www.lse.ac.uk/socialPsychology/Home.aspx" target="_blank" class="item">Psychology@LSE</a>
-              <a href="http://www.geirso.uqam.ca/" target="_blank" class="item">GEIRSO Montréal</a>
-              <a href="http://www.centromoscovici.unb.br/" target="_blank" class="item">Centro Moscovici – Brasília</a>
-              <a href="http://www.fcc.org.br/pesquisa/ciers.html" target="_blank" class="item">CIERS-Ed Sao Paulo</a>
-              <a href="http://greps.univ-lyon2.fr/" target="_blank" class="item">Labo GRePS – Univ. Lyon 2</a>
-              <a href="http://www.lps-aix.com/" target="_blank" class="item">Labo LPS-AMU</a>
-            </div>
+          BLOG
+        </h1>
+        {{ content }}
+      </div>
+      <footer class="ui inverted vertical footer segment">
+        <div class="bender left"></div>
+        <div class="bender right"></div>
+        <div class="ui centered relaxed grid">
+          <div class="column center aligned">
+            <button class="circular inverted ui icon button" data-tooltip="Visit our github page">
+              <i class="big icon github"></i>
+            </button>
+            <span>Github</span>
           </div>
-          <div class="seven wide column">
-            <h4 class="ui inverted header">Footer Header</h4>
-            <p>Il faudra décider de ce qu'on met ici.</p>
+          <div class="column center aligned">
+            <button class="circular inverted ui icon button" data-tooltip="Subscribe to our Twitter for fresh news!">
+              <i class="big icon twitter"></i>
+            </button>
+            <span>Twitter</span>
+          </div>
+          <div class="column center aligned">
+            <button class="circular inverted ui icon button" data-tooltip="Meet the people behind Neatastic on Linkedin">
+              <i class="big icon linkedin"></i>
+            </button>
+            <span>Linkedin</span>
+          </div>
+          <div class="column center aligned">
+            <button class="circular inverted ui icon button" data-tooltip="Leave us a message">
+              <i class="big icon mail"></i>
+            </button>
+            <span>Contact us</span>
+          </div>
+          <div class="column center aligned">
+            <button class="circular inverted ui icon button" data-tooltip="This website has been designed and coded by Neatastic &#xa; and is licensed under CC BY 2.0">
+              <i class="big icon creative commons"></i>
+            </button>
+            <span>Credits</span>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
   </div>
-</div>
+  <script src="/assets/js/logo.js"></script>
+  <script src='/assets/js/nprogress.js'></script>
 
-{% if page.pill == 4 %}
-<script src="/assets/js/easp.js"></script>
-{% endif %}
+
 </body>
 
 </html>

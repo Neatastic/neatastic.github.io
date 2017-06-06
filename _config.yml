@@ -15,6 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title : Neastic - Blog
 tagline: "The Neatastic blog"
+github: [metadata]
 author :
   name : Antoine Cordelois
   email : a.cordelois@neatastic.com
@@ -43,3 +44,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
+  - semantic/src
+  - semantic/tasks

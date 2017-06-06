@@ -1,0 +1,364 @@
+@namespace svg "http://www.w3.org/2000/svg";
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: $backgroundColor!important;
+
+  /* useless but cool
+  @include xxl-width(){
+  @include define-breakpoint("xxl-width");
+}
+@include xl-width(){
+@include define-breakpoint("xl-width");
+}
+@include lg-width(){
+@include define-breakpoint("lg-width");
+}
+@include md-width(){
+@include define-breakpoint("md-width");
+}
+@include sm-width(){
+@include define-breakpoint("sm-width");
+}
+@include s-width(){
+@include define-breakpoint("s-width");
+}
+@include s-width(){
+@include define-breakpoint("xs-width");
+}
+@include xxs-width(){
+@include define-breakpoint("xxs-width");
+}*/
+}
+
+.fixed.toggle.button {
+  position: fixed;
+  top: 1em;
+  left: 0;
+  width: auto;
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-bottom: 0;
+  background-color: $backgroundColor;
+  border: none;
+  padding-right: 1em;
+  box-shadow: none!important;
+  @media #{$xxl-width} {
+    display: none!important;
+  }
+  @media #{$xl-width} {
+    display: none!important;
+  }
+  @media #{$s-landscape} {
+    display: block!important;
+  }
+  @media #{$s-portrait} {
+    display: block!important;
+  }
+
+  .mobile-logo-image, .mobile-logo-image-hover, i {
+    max-width: 3em;
+  }
+  .mobile-logo-image-hover, i {
+    display:none;
+  }
+  .mobile-logo-image {
+    display:block;
+  }
+  .text {
+    text-align: center;
+    color: white;
+  }
+  -webkit-transition: 0.3s all ease, 0.5s transform ease;
+  -moz-transition: 0.3s all ease, 0.5s transform ease;
+  -o-transition: 0.3s all ease, 0.5s transform ease;
+  -ms-transition: 0.3s all ease, 0.5s transform ease;
+  transition: 0.3s all ease, 0.5s transform ease;
+
+  &:hover {
+    padding-left: 2em;
+    background-color: $greenyay;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    .mobile-logo-image-hover {
+      display:block;
+    }
+    .mobile-logo-image {
+      display:none;
+    }
+    .text {
+      color: $backgroundColor;
+    }
+  }
+
+}
+
+.hide-me-from-older-browsers {
+  display: none;
+  visibility: hidden;
+}
+
+svg|g.hide-me-from-older-browsers {
+  display: inline;
+  visibility: visible;
+}
+
+.ui.footer.segment {
+  width: 100%;
+  margin-bottom: 0;
+  padding-top: 0;
+  text-align: center;
+  background-color: $backgroundColor;
+
+  .grid .column span {
+    // retirer les spans en modle mobile
+    @media #{$s-landscape} {
+      display: none!important;
+    }
+    @media #{$s-portrait} {
+      display: none!important;
+    }
+    opacity: 0;
+    -webkit-transition: 0.3s opacity ease, 1s transform ease;
+    -moz-transition: 0.3s opacity ease, 1s transform ease;
+    -o-transition: 0.3s opacity ease, 1s transform ease;
+    -ms-transition: 0.3s opacity ease, 1s transform ease;
+    transition: 0.3s opacity ease, 1s transform ease;
+  }
+
+  button {
+    box-shadow: none!important;
+  }
+
+  .column {
+  }
+
+  &:hover .grid .column span {
+    opacity: 1;
+  }
+
+}
+
+.ui.inverted.menu.sidebar {
+  &.visible {
+    + .fixed.toggle.button  {
+      display:none!important;
+    }
+  }
+
+  &:not(.visible) {
+    + .pusher {
+      padding-left: 5em;
+    }
+  }
+  @include body-background;
+  box-shadow: none;
+}
+
+.left-nav {
+  position: fixed!important;
+  top: 2px;
+  left: 0;
+  bottom: 0;
+  padding: 3em 3em 0 1em;
+  width: 30%;
+  z-index: 10;
+  @include body-background;
+  @media #{$xxl-width} {
+    width: 20%;
+    display: inline-block;
+  }
+  @media #{$xl-width} {
+    width: 30%;
+    display: inline-block;
+  }
+  @media #{$lg-width} {
+    display: inline-block;
+    width: 30%;
+  }
+  @media #{$md-width} {
+    display: inline-block;
+    width: 30%;
+  }
+  @media #{$m-portrait} {
+    display: inline-block;
+    width: 30%;
+  }
+  @media #{$m-landscape} {
+    display: inline-block;
+    width: 30%;
+  }
+  @media #{$s-portrait} {
+    padding: 10em 3em 0 1em;
+    display: none;
+  }
+  @media #{$s-landscape} {}
+  @media #{$xs-width} {}
+  @media #{$xxs-width} {}
+
+  .ui.link.list.left-menu-content {
+    text-align: center;
+    .item {
+      padding: 0 0.25em;
+      font-weight: 500;
+      -webkit-transition: color 0.2s;
+      transition: color 0.2s;
+
+      color: #fff;
+      &:hover {
+        color: $greenyay;
+      }
+    }
+  }
+}
+.ui.featured.ribbon {
+  background-color: $greenyay;
+  color: $backgroundColor;
+  &:hover {
+    background-color: $greenyay;
+  }
+
+}
+.pusher {
+  min-height: 100%;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  background-color: $backgroundColor!important;
+  .right-content {
+    min-height: 100%;
+    padding: 3em 3em 0 1em;
+    article.featured {
+      border-left-width: 0.5em !important;
+      border-left-color: #c9de43 !important;
+    }
+    article .extra.content {
+      text-align: center;
+      padding-top: 1em;
+    }
+    article:first-of-type {
+      @media #{$s-landscape} {
+        margin-top: 6em;
+      }
+      @media #{$s-portrait} {
+        margin-top: 6em;
+      }
+    }
+    .blog-title {
+      padding-bottom: 0.8em;
+      padding-top: 1em;
+      display: none;
+      width: 100%;
+      background-color: $backgroundColor;
+      background: -moz-linear-gradient(top, rgba(72,85,99,1) 0%, rgba(72,85,99,1) 82%, rgba(72,85,99,0) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(72,85,99,1) 0%,rgba(72,85,99,1) 82%,rgba(72,85,99,0) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(72,85,99,1) 0%,rgba(72,85,99,1) 82%,rgba(72,85,99,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485563', endColorstr='#00485563',GradientType=0 ); /* IE6-9 */
+      &.sticked {
+
+      }
+      @media #{$xxl-width} {
+        display: none!important;
+      }
+      @media #{$xl-width} {
+        display: none!important;
+      }
+      @media #{$s-landscape} {
+        display: block!important;
+      }
+      @media #{$s-portrait} {
+        display: block!important;
+      }
+    }
+    @media #{$xxl-width} {
+      width: 60%;
+      margin-left: 20%;
+      margin-top: 0;
+      padding: 3em 1em;
+    }
+    @media #{$xl-width} {
+      width: 60%;
+      margin-left: 30%;
+      padding: 3em 1em;
+    }
+    @media #{$lg-width} {
+      width: 60%;
+      margin-left: 30%;
+    }
+    @media #{$md-width} {
+      width: 60%;
+      margin-left: 30%;
+    }
+    @media #{$m-portrait} {
+      width: 70%;
+      margin-left: 30%;
+    }
+    @media #{$m-landscape} {
+      width: 70%;
+      margin-left: 30%;
+      margin-top: 0;
+    }
+    @media #{$s-portrait} {
+      width: 100%;
+      margin-left: 0;
+      padding: 3em 0 0;
+    }
+    @media #{$s-landscape} {
+      width: 100%;
+      margin-left: 0;
+      padding: 3em 0;
+    }
+  }
+}
+
+.logo {}
+
+.blog-title-container {
+  &:before {
+    opacity: 0;
+  }
+
+  .blog-title {
+    padding: 0 0 0 1.15em;
+
+    &:hover {
+      .icon {
+        opacity: 1;
+      }
+    }
+
+    .icon {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+      -moz-transition: opacity 0.5s ease-out;
+      -webkit-transition: opacity 0.5s ease-out;
+      -o-transition: opacity 0.5s ease-out;
+    }
+  }
+}
+
+.logo-container {
+  width: 100;
+  height: 24%;
+  padding-top: 3em !important;
+
+  svg {
+    width: 100%;
+    height: 24%;
+  }
+
+  &:before {
+    opacity: 0;
+  }
+
+  &:hover {
+    background-color: transparent!important;
+  }
+}

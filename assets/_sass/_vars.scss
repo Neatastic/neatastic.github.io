@@ -1,0 +1,91 @@
+// breaking points for the grid
+$break-xxs: 360px;
+$break-xs : 400px;
+$break-s : 800px;
+$break-sm : 1024px;
+$break-md : 1280px;
+$break-lg : 1600px;
+$break-xl : 1920px;
+$break-xxl : 2500px;
+$space: 1.5em;
+$space-lg: 2em;
+
+// media queries
+
+// main query
+$portraitPhoneMode : "screen and (max-width: 400px), screen and (max-width:1024px) and (orientation:portrait)";
+
+// basic width based queries
+$xxs-width : "screen and (max-width: 360px)";
+$xs-width : "screen and (max-width: 400px)";
+$s-width : "screen and (max-width: 800px)";
+$sm-width : "screen and (max-width: 1024px)";
+$md-width : "screen and (max-width: 1280px)";
+$lg-width : "screen and (max-width: 1600px)";
+$xl-width : "screen and (max-width: 1920px)";
+$xxl-width : "screen and (min-width:  1921px)";
+
+// device specific queries
+
+//ipad & other tablets in portrait
+$m-portrait: "screen and (max-width:1024px) and (orientation:portrait)";
+
+//ipad & other tablets in landscape
+$m-landscape: "screen and (max-width:1024px) and (orientation:landscape)";
+
+//iphone & other smartphones in portrait
+$s-portrait: "screen and (max-width:799px) and (orientation:portrait)";
+
+//iphone & other smartphones in landscape
+$s-landscape: "screen and (max-width:800px) and (orientation:landscape)";
+
+/* USELESS BUT COOL
+@mixin define-breakpoint($name) {
+    &:after {
+      content: $name;
+      display: none;
+    }
+}
+@mixin xxs-width {
+  @media screen and (max-width:  360px) {
+    @content;
+  }
+}
+
+@mixin xs-width {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin s-width {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+@mixin sm-width {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin md-width {
+  @media only screen and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin lg-width {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+@mixin xl-width {
+  @media screen and (max-width: 1920px) {
+    @content;
+  }
+}
+@mixin xxl-width {
+  @media screen and (max-width:  2500px) {
+    @content;
+  }
+}
+*/

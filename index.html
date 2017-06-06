@@ -3,5 +3,41 @@ layout: default
 title: Actualités
 pill: 0
 ---
+<div class="ui container">
+  {% assign sortedPosts = site.posts | where: "sticky", "true" | sort:'date' %}
+  {% for post in sortedPosts limit:1  %}
+  {% assign featuredPost = post.id %}
+    {% include post.html %}
+  {% endfor %}
+  {% for post in paginator.posts %}
+  {% unless post.id == featuredPost %}
+  {% include post.html featured=true %}
+  {% endunless %}
+  {% endfor %}
 
-<h1>HEAAY WORLD I'M HERE!</h1>
+  {% if paginator.total_pages > 1 %}
+
+      <div class="ui pagination menu">
+        {% if paginator.previous_page and paginator.previous_page > 1 %}
+        <a class="item" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
+        {% else %}
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+        <a class="active item" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+        {% elsif page == 1 %}
+        <a class="item" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+        {% else %}
+        <a class="item" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+        {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page and paginator.next_page < paginator.total_pages %}
+        <a class="item" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
+        {% else %}
+        {% endif %}
+      </div>
+  {% endif %}
+
+</div>
