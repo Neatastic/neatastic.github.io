@@ -58,33 +58,33 @@ layout: compress
         <div class="bender right"></div>
         <div class="ui centered relaxed grid">
           <div class="column center aligned">
-            <button class="circular inverted ui icon button" data-tooltip="Visit our github page">
+            <a href="https://github.com/Billybobbonnet" target="_blank" class="circular inverted ui icon button" data-tooltip="Visit our github page">
               <i class="big icon github"></i>
-            </button>
+            </a>
             <span>Github</span>
           </div>
           <div class="column center aligned">
-            <button class="circular inverted ui icon button" data-tooltip="Subscribe to our Twitter for fresh news!">
+            <a href="https://twitter.com/intent/user?screen_name=_neatastic_" class="circular inverted ui icon button" target="_blank" data-tooltip="Subscribe to our Twitter for fresh news!">
               <i class="big icon twitter"></i>
-            </button>
+            </a>
             <span>Twitter</span>
           </div>
           <div class="column center aligned">
-            <button class="circular inverted ui icon button" data-tooltip="Meet the people behind Neatastic on Linkedin">
+            <a href="https://www.linkedin.com/in/antoine-cordelois/"  class="circular inverted ui icon button" target="_blank"  data-tooltip="Meet the people behind Neatastic on Linkedin">
               <i class="big icon linkedin"></i>
-            </button>
+            </a>
             <span>Linkedin</span>
           </div>
           <div class="column center aligned">
-            <button class="circular inverted ui icon button" data-tooltip="Leave us a message">
+            <a href="/contact" class="circular inverted ui icon button" data-tooltip="Leave us a message">
               <i class="big icon mail"></i>
-            </button>
-            <span>Contact us</span>
+            </a>
+            <span>Contact</span>
           </div>
           <div class="column center aligned">
-            <button class="circular inverted ui icon button" data-tooltip="This website has been designed and coded by Neatastic &#xa; and is licensed under CC BY 2.0">
+            <a onclick="$('#credits').modal('show')" class="circular inverted ui icon button" data-tooltip="This website has been designed and coded by Neatastic &#xa; and is licensed under CC BY 2.0">
               <i class="big icon creative commons"></i>
-            </button>
+            </a>
             <span>Credits</span>
           </div>
         </div>
@@ -93,7 +93,24 @@ layout: compress
   </div>
   <script src="/assets/js/logo.js"></script>
   <script src='/assets/js/nprogress.js'></script>
-
+  <div class="ui modal" id="credits">
+    <i class="close icon"></i>
+    <div class="header">    Crédits
+    </div>
+    <div class="image content">
+      <div class="ui medium image">
+        <img src="/assets/images/logo.svg" onerror="this.src='/assets/images/logo-dark.png'">
+      </div>
+      <div class="description">
+        <div class="ui header">This website has been designed and coded by <a target="_blank" href="http://www.neatastic.com">Neatastic</a> and is licensed under CC BY 2.0</div>
+        <ul>
+          <li>Powered by <a target="_blank" href="https://jekyllrb.com">Jekyll</a>, the static website generator</li>
+          <li>Using <a target="_blank" href="https://semantic-ui.com">Semantic-UI</a> as frontend library</li>
+          <li>Open to contributions and improvements on <a target="_blank" href="https://github.com/Remosco/website">Github</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 </body>
 

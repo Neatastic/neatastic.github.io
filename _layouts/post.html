@@ -2,10 +2,11 @@
 layout: default
 ---
 
+{% if include.featured %}<article class="ui segment featured">
+<div class="ui featured right ribbon label">Editorial</div>
+{% else %}
 <article class="ui segment">
-  {% unless include.featured %}
-  <div class="ui featured right ribbon label">Editorial</div>
-  {% endunless%}
+{% endif%}
   <br>
   <div class="content">
     <h1 class="ui header">{{ page.title }}

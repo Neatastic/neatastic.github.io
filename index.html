@@ -7,11 +7,11 @@ pill: 0
   {% assign sortedPosts = site.posts | where: "sticky", "true" | sort:'date' %}
   {% for post in sortedPosts limit:1  %}
   {% assign featuredPost = post.id %}
-    {% include post.html %}
+    {% include post.html featured=true %}
   {% endfor %}
   {% for post in paginator.posts %}
   {% unless post.id == featuredPost %}
-  {% include post.html featured=true %}
+  {% include post.html %}
   {% endunless %}
   {% endfor %}
 

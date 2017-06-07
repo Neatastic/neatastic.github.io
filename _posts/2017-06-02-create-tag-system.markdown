@@ -5,6 +5,10 @@ tags:
   - Jekyll
 sticky: false
 comments: true
-excerpt: true
+full: false
 ---
-This  is a placeholder post where I will describe how I created a tag system for this Jekyll generated website.
+Hello all,
+
+Today, I will explain how I made the tags system for this Jekyll powered blog. 
+
+Many others have done it and I guess this is no big deal, but here it is, with a touch of the Neatastic flavor.

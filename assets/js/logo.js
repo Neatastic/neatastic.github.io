@@ -19,9 +19,9 @@ var circleCenterY3 = circlePosition3.top + (circlePosition3.width / 2);
 
 // refresh values if window is resized
 window.onresize = function(event) {
-  var circle1 = document.getElementById("eye1");
-  var circle2 = document.getElementById("eye2");
-  var circle3 = document.getElementById("eye3");
+  circle1 = document.getElementById("eye1");
+  circle2 = document.getElementById("eye2");
+  circle3 = document.getElementById("eye3");
 
   circlePosition1 = circle1.getBoundingClientRect();
   circlePosition2 = circle2.getBoundingClientRect();

@@ -33,6 +33,7 @@ gems:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jemoji
 production_url : http://blog.neatastic.com
 compress_html:
   clippings: [div, p, ul, td, h1, h2]

@@ -196,6 +196,7 @@ DEPENDENCIES
   github-pages
   jekyll (= 3.4.3)
   jekyll-feed (~> 0.6)
+  jemoji
   minima (~> 2.0)
   tzinfo-data
 

@@ -3,7 +3,7 @@
 body {
   font-family: 'Raleway', sans-serif;
   background-color: $backgroundColor!important;
-
+  min-height: 100%;
   /* useless but cool
   @include xxl-width(){
   @include define-breakpoint("xxl-width");
@@ -57,15 +57,21 @@ body {
     display: block!important;
   }
 
-  .mobile-logo-image, .mobile-logo-image-hover, i {
+  .mobile-logo-image,
+  .mobile-logo-image-hover,
+  i {
     max-width: 3em;
   }
-  .mobile-logo-image-hover, i {
-    display:none;
+
+  .mobile-logo-image-hover,
+  i {
+    display: none;
   }
+
   .mobile-logo-image {
-    display:block;
+    display: block;
   }
+
   .text {
     text-align: center;
     color: white;
@@ -85,18 +91,20 @@ body {
     border-top-width: 2px;
     border-right-width: 2px;
     border-bottom-width: 2px;
-    border-left-width: 0px;
+    border-left-width: 0;
+
     .mobile-logo-image-hover {
-      display:block;
+      display: block;
     }
+
     .mobile-logo-image {
-      display:none;
+      display: none;
     }
+
     .text {
       color: $backgroundColor;
     }
   }
-
 }
 
 .hide-me-from-older-browsers {
@@ -118,10 +126,7 @@ svg|g.hide-me-from-older-browsers {
 
   .grid .column span {
     // retirer les spans en modle mobile
-    @media #{$s-landscape} {
-      display: none!important;
-    }
-    @media #{$s-portrait} {
+     @media #{$md-width} {
       display: none!important;
     }
     opacity: 0;
@@ -132,23 +137,21 @@ svg|g.hide-me-from-older-browsers {
     transition: 0.3s opacity ease, 1s transform ease;
   }
 
-  button {
+  .button {
     box-shadow: none!important;
   }
 
-  .column {
-  }
+  .column {}
 
   &:hover .grid .column span {
     opacity: 1;
   }
-
 }
 
 .ui.inverted.menu.sidebar {
   &.visible {
-    + .fixed.toggle.button  {
-      display:none!important;
+    + .fixed.toggle.button {
+      display: none!important;
     }
   }
 
@@ -160,7 +163,46 @@ svg|g.hide-me-from-older-browsers {
   @include body-background;
   box-shadow: none;
 }
+.sidebar {
+  .blog-title-container:not(.sub.header) {
+    font-size: 3em!important;
+  }
 
+  .logo-container {
+    width: 100;
+    height: 24%;
+    padding-top: 3em !important;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:before {
+      opacity: 0;
+    }
+
+    &:hover {
+      background-color: transparent!important;
+    }
+  }
+  .ui.link.list.left-menu-content {
+    text-align: center;
+
+    .item {
+      padding: 0 0.25em;
+      font-weight: 500;
+      font-size: 1.2em;
+      -webkit-transition: color 0.2s;
+      transition: color 0.2s;
+      color: #fff;
+
+      &:hover {
+        color: $greenyay;
+      }
+    }
+  }
+}
 .left-nav {
   position: fixed!important;
   top: 2px;
@@ -202,29 +244,55 @@ svg|g.hide-me-from-older-browsers {
   @media #{$xs-width} {}
   @media #{$xxs-width} {}
 
+  .logo-container {
+    width: 100;
+    height: 24%;
+    padding-top: 3em !important;
+
+    svg {
+      width: 100%;
+      height: 24%;
+    }
+
+    &:before {
+      opacity: 0;
+    }
+
+    &:hover {
+      background-color: transparent!important;
+    }
+  }
+  .blog-title-container:not(.sub.header) {
+    font-size: 3em!important;
+  }
+
   .ui.link.list.left-menu-content {
     text-align: center;
+
     .item {
       padding: 0 0.25em;
       font-weight: 500;
+      font-size: 1.2em;
       -webkit-transition: color 0.2s;
       transition: color 0.2s;
-
       color: #fff;
+
       &:hover {
         color: $greenyay;
       }
     }
   }
 }
+
 .ui.featured.ribbon {
   background-color: $greenyay;
   color: $backgroundColor;
+
   &:hover {
     background-color: $greenyay;
   }
-
 }
+
 .pusher {
   min-height: 100%;
   -webkit-transition: all 0.5s ease-out;
@@ -232,17 +300,21 @@ svg|g.hide-me-from-older-browsers {
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   background-color: $backgroundColor!important;
+
   .right-content {
     min-height: 100%;
-    padding: 3em 3em 0 1em;
+    padding: 3em 6em 0 1em;
+
     article.featured {
       border-left-width: 0.5em !important;
       border-left-color: #c9de43 !important;
     }
+
     article .extra.content {
       text-align: center;
       padding-top: 1em;
     }
+
     article:first-of-type {
       @media #{$s-landscape} {
         margin-top: 6em;
@@ -251,19 +323,22 @@ svg|g.hide-me-from-older-browsers {
         margin-top: 6em;
       }
     }
+
     .blog-title {
       padding-bottom: 0.8em;
       padding-top: 1em;
       display: none;
       width: 100%;
       background-color: $backgroundColor;
-      background: -moz-linear-gradient(top, rgba(72,85,99,1) 0%, rgba(72,85,99,1) 82%, rgba(72,85,99,0) 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(72,85,99,1) 0%,rgba(72,85,99,1) 82%,rgba(72,85,99,0) 100%); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba(72,85,99,1) 0%,rgba(72,85,99,1) 82%,rgba(72,85,99,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485563', endColorstr='#00485563',GradientType=0 ); /* IE6-9 */
-      &.sticked {
-
-      }
+      background: -moz-linear-gradient(top, rgba(72,85,99,1) 0%, rgba(72,85,99,1) 82%, rgba(72,85,99,0) 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(72,85,99,1) 0%,rgba(72,85,99,1) 82%,rgba(72,85,99,0) 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(72,85,99,1) 0%,rgba(72,85,99,1) 82%,rgba(72,85,99,0) 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#485563', endColorstr='#00485563',GradientType=0 );
+      /* IE6-9 */
+      &.sticked {}
       @media #{$xxl-width} {
         display: none!important;
       }
@@ -281,12 +356,12 @@ svg|g.hide-me-from-older-browsers {
       width: 60%;
       margin-left: 20%;
       margin-top: 0;
-      padding: 3em 1em;
+      padding: 3em 0 6em 1em;
     }
     @media #{$xl-width} {
       width: 60%;
       margin-left: 30%;
-      padding: 3em 1em;
+      padding: 3em 0 6em 1em;
     }
     @media #{$lg-width} {
       width: 60%;
@@ -341,24 +416,5 @@ svg|g.hide-me-from-older-browsers {
       -webkit-transition: opacity 0.5s ease-out;
       -o-transition: opacity 0.5s ease-out;
     }
-  }
-}
-
-.logo-container {
-  width: 100;
-  height: 24%;
-  padding-top: 3em !important;
-
-  svg {
-    width: 100%;
-    height: 24%;
-  }
-
-  &:before {
-    opacity: 0;
-  }
-
-  &:hover {
-    background-color: transparent!important;
   }
 }
