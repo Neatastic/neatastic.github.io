@@ -10,7 +10,7 @@ layout: default
   <br>
   <div class="content">
     <h1 class="ui header">{{ page.title }}
-      <div class="ui sub header">{{ page.date | date: "%d %B %Y" }}{% if page.comments %} - <a href="https://blog.neatastic.com{{ url }}#disqus_thread"><i class="icon comments"></i> 0 Comments</a>{% endif %}</div>
+      <div class="ui sub header">{{ page.date | date: "%d %B %Y" }}{% if page.comments %} - <a href="http://blog.neatastic.com{{ url }}#disqus_thread"><i class="icon comments"></i> 0 Comments</a>{% endif %}</div>
       {% for tag in page.tags %} {% case tag %}
       {% when "News" %} <a href="{{ root }}" class="ui tag label">News</a>
       {% when "Video" %}<a href="{{ root }}/videos.html" class="ui blue tag label uh">Video</a>
