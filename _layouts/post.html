@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-
+<div class="ui container">
+{{ forloop.index }}
 {% if include.featured %}<article class="ui segment featured">
 <div class="ui featured right ribbon label">Editorial</div>
 {% else %}
@@ -11,26 +12,30 @@ layout: default
   <div class="content">
     <h1 class="ui header">{{ page.title }}
       <div class="ui sub header">{{ page.date | date: "%d %B %Y" }}{% if page.comments %} - <a href="http://blog.neatastic.com{{ url }}#disqus_thread"><i class="icon comments"></i> 0 Comments</a>{% endif %}</div>
-      {% for tag in page.tags %} {% case tag %}
-      {% when "News" %} <a href="{{ root }}" class="ui tag label">News</a>
-      {% when "Video" %}<a href="{{ root }}/videos.html" class="ui blue tag label uh">Video</a>
-      {% when "Jekyll" %}<a href="{{ root }}/EASP-videos.html" class="ui cyan tag label">Jekyll</a>
-      {% when "Meteor" %}<a href="{{ root }}/EASP-videos.html" class="ui red tag label">Jekyll</a>
-      {% when "Web design" %}<a href="{{ root }}/EASP-videos.html" class="ui yellow tag label">Web Design</a>
-      {% when "Event" %}<a href="{{ root }}/events.html" class="ui orange tag label">Evènement</a>
-      {% when "French" %}<span class="ui tag label"><i class="france flag"></i>Français</span>
-      {% when "Spanish" %}<span class="ui tag label"><i class="spain flag"></i>Espagnol</span>
-      {% when "English" %}<span class="ui tag label"><i class="gb flag"></i>Anglais</span>
-      {% when "US" %}<span class="ui tag label"><i class="america flag"></i>Américain</span> {% else %} {% endcase %} {% endfor %}
+      {% for tag in page.tags %}
+{% include tag.html %}
+      {% endfor %}
     </h1>
     <div class="description">
       {{ content }}
     </div>
   </div>
   <div class="extra content">
+    <div class="icon buttons share-buttons">
+      <div class="ui horizontal divider">
+        SHARE
+      </div>
+      <button class="ui big circular facebook button"><i class="icon facebook"></i></button>
+      <button class="ui big circular twitter button"><i class="icon twitter"></i></button>
+      <button class="ui big circular google plus button"><i class="icon google plus"></i></button>
+      <button class="ui big circular linkedin button"><i class="icon linkedin"></i></button>
+      <button class="ui big circular button"><i class="icon mail"></i></button>
+    </div>
+<div class="ui horizontal divider"></div>
     {% include disqus.html %}
   </div>
 </article>
 
 {% include disqus.html %}
 <script id="dsq-count-scr" src="//NEATASTIC.disqus.com/count.js" async></script>
+</div>

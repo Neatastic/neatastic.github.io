@@ -1,3 +1,4 @@
+
 @namespace svg "http://www.w3.org/2000/svg";
 
 body {
@@ -126,7 +127,7 @@ svg|g.hide-me-from-older-browsers {
 
   .grid .column span {
     // retirer les spans en modle mobile
-     @media #{$md-width} {
+    @media #{$md-width} {
       display: none!important;
     }
     opacity: 0;
@@ -162,6 +163,14 @@ svg|g.hide-me-from-older-browsers {
   }
   @include body-background;
   box-shadow: none;
+}
+.contact-form {
+  .actions {
+    text-align: right;
+    .button {
+      color:$backgroundColor;
+    }
+  }
 }
 .sidebar {
   .blog-title-container:not(.sub.header) {
@@ -292,7 +301,9 @@ svg|g.hide-me-from-older-browsers {
     background-color: $greenyay;
   }
 }
-
+.share-buttons .ui.circular.button > .icon {
+  margin-right: 0em;
+}
 .pusher {
   min-height: 100%;
   -webkit-transition: all 0.5s ease-out;
@@ -305,17 +316,18 @@ svg|g.hide-me-from-older-browsers {
     min-height: 100%;
     padding: 3em 6em 0 1em;
 
-    article.featured {
+    .featured {
       border-left-width: 0.5em !important;
       border-left-color: #c9de43 !important;
     }
 
-    article .extra.content {
+    .extra.content {
       text-align: center;
       padding-top: 1em;
+
     }
 
-    article:first-of-type {
+    .segment:first-of-type {
       @media #{$s-landscape} {
         margin-top: 6em;
       }
@@ -383,12 +395,12 @@ svg|g.hide-me-from-older-browsers {
     @media #{$s-portrait} {
       width: 100%;
       margin-left: 0;
-      padding: 3em 0 0;
+      padding: 3em 0  6em 0;
     }
     @media #{$s-landscape} {
       width: 100%;
       margin-left: 0;
-      padding: 3em 0;
+      padding: 3em 0 6em 0;
     }
   }
 }
@@ -417,4 +429,23 @@ svg|g.hide-me-from-older-browsers {
       -o-transition: opacity 0.5s ease-out;
     }
   }
+}
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  color: $backgroundColor;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
 }

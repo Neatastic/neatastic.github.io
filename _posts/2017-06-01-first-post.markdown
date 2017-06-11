@@ -13,7 +13,7 @@ Here we are! This is my first post!
 
 It might be Neatastic blog, but right now, Neatastic is me : [Antoine Cordelois](https://www.linkedin.com/in/antoine-cordelois/){:target="_blank"}.
 
-I am a UX researcher who decided to cultivate his other skill set : software and web developement, mostly web nowadays.
+I am an UX researcher who decided to cultivate his other skill set : software and web developement, mostly web nowadays.
 
 For four years now, I have been working as a freelance full stack developer.
 
@@ -23,7 +23,7 @@ Later, I will also add a portfolio and a conceptual website to the mix.
 
 I usually try to publish everything that I code on my [Github](https://github.com/Billybobbonnet){:target="_blank"}, as long as my clients allow it. But sometimes, the journey is funnier than the destination, so I decided to make this blog to tell you about these experiments I made, these techniques I found, and brag a little about my new projects too :smiley:.
 
-Since I made a ["sticky" feature](:sticky), this post will stay on top of the other posts until it is replaced by another more recent sticky one.
+Since I made a ["sticky" feature](/2017/05/31/sticky-posts.html), this post will stay on top of the other posts until it is replaced by another more recent sticky one.
 
 With :heart:,
 

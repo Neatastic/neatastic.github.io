@@ -1,7 +1,11 @@
-<h1>{{ include.post_url }}{{ post_url }} {{ .name }}</h1>
-{% if page.url == include.post_url %}
-<img class="ui centered big rounded image" src="{{ include.image }}">
-{% else %}
-<img class="ui left floated medium rounded image" src="{{ include.image }}">
+{% case include.type %}
+  {% when "left" %}
+  <img class="ui left floated spaced medium rounded image" src="{{ include.image }}">
+  {% when "right" %}
+  <img class="ui right floated spaced medium rounded image" src="{{ include.image }}">
+  {% when "full" %}
+  <img class="ui fluid rounded image" src="{{ include.image }}">
+  {% else %}
+  <img class="ui left floated spaced medium rounded image" src="{{ include.image }}">
 
-{% endif %}
+{% endcase %}
