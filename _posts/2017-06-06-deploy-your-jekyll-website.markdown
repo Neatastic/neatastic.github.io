@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Deploy your Jekyll website, the easy way!"
+title:  "How Jekyll can do the job"
 tags:
   - Jekyll
 sticky: false
@@ -11,7 +11,7 @@ excerpt_separator: <!--more-->
 {% include image.html type="left" image="/assets/images/JEKYLL.jpg" post_url=page.url %}
 Today I will show you how I automated my Jekyll deployments.
 
-Even for regular git users like *yours truely*, this is a pain to type ten times a day (often more) the same lines of code. While [there are tools to automate this](https://github.com/yegor256/jekyll-github-deploy), I wanted my own version. These are simple tasks and I don't need extra software for that.
+Even for regular git users like *yours truely*, this is a pain to use ten times a day (often more) the same lines of code. While [there are tools to automate this](https://github.com/yegor256/jekyll-github-deploy), I wanted my own version. These are simple tasks and I don't need extra software for that.
 
 Morevover, I do have a thing going on with Jekyll. I love it. It's a bit late, I agree, since the tech itself is getting old. But still. Show me something better and I will reconsider.
 
