@@ -3,6 +3,7 @@ layout: post
 title:  "How Jekyll can do the job"
 tags:
   - Jekyll
+  - Recipe
 sticky: false
 comments: true
 full: false
@@ -77,10 +78,12 @@ I will divide them in the four areas you saw in the screenshot up there.
 
 ### "Common tasks" zone
 
-The title says it all. We have basic tasks + a few custom ones related to the website specific needs :
+The title says it all. We have basic tasks + a few custom ones related to the blog specific needs :
 
-  - Write a new article
+  - Write a new post
+  - open the latest post
   - Compile and display the local version of the website
+  - Open the post folder
   - Update the website
   - Display the website
 

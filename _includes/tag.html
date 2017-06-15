@@ -1,13 +1,21 @@
-{% case tag %}
-{% when "News" %} <a href="" class="ui tag label">News</a>
-{% when "Video" %}<a href="" class="ui blue tag label uh">Video</a>
-{% when "Jekyll" %}<a href="" class="ui cyan tag label">Jekyll</a>
-{% when "Meteor" %}<a href="" class="ui red tag label">Jekyll</a>
-{% when "Web design" %}<a href="" class="ui yellow tag label">Web Design</a>
-{% when "Event" %}<a href="{{ root }}/events.html" class="ui orange tag label">Evènement</a>
-{% when "French" %}<span class="ui tag label"><i class="france flag"></i>Français</span>
-{% when "Spanish" %}<span class="ui tag label"><i class="spain flag"></i>Espagnol</span>
-{% when "English" %}<span class="ui tag label"><i class="gb flag"></i>Anglais</span>
-{% when "US" %}<span class="ui tag label"><i class="america flag"></i>Américain</span>
+{% assign unregisteredTags = "" %}
+{% assign registeredTags = ["Jekyll", "Recipe", "Event", "News"] %}
+{% assign availableColors = ["red","orange","yellow","olive","green","teal","blue","violet","purple","pink","brown","grey","black"] %}
+{% assign availableAlternativeColors = ["lightRed","lightOrange","lightYellow","lightOlive","lightGreen","lightTeal","lightBlue","lightViolet","lightPurple","lightPink","lightBrown","lightGrey ","lightBlack"] %}
+{% for post in site.posts %}
+{% for tag in post.tags %}
+{% assign postTags = tag | split:' '  %}
+{% for tag_item in postTags %}
+{{ tag }} |
+{% if registeredTags contains tag %}
+in it!
 {% else %}
-{% endcase %}
+{% assign unregisteredTag = tag | append: ' ' %}
+{{ unregisteredTags = unregisteredTags | append:unregisteredTag }}
+{% endif %}
+{% endfor %}
+
+
+{% endfor %}
+{% endfor %}
+{{ unregisteredTags }}
