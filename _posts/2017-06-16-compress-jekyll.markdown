@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Creating a sticky post feature for Jekyll"
+date:   2017-05-31 14:32:39 +0200
 tags:
  - Jekyll
  - Recipe
