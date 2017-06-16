@@ -23,6 +23,7 @@ author :
 collections:
 #  - members
 lang: en
+google_analytics: UA-89956822-2
 sass:
   sass_dir: assets/_sass
   style: compressed
