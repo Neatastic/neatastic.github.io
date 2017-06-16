@@ -79,6 +79,8 @@ Here is my train of thoughts
 
  And I had a "what the f... have you done!" moment. Yeah. :astonished:
 
+ {% include image.html type="center" image="/assets/images/wtf.jpeg" post_url=page.url %}
+
  For starters, this system relies on the chronological order of posts (from oldest to newest).
 
  On one hand, tt allows me, whatever the new tags are, to detect them in the same order. Thus allowing them always the same color.
