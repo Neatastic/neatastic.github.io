@@ -13,7 +13,7 @@ excerpt_separator: <!--more-->
 Hello all,
 
 {% include image.html type="right" image="/assets/images/tags.jpg" post_url=page.url %}
-Here is a small post to explain how I made the tags system for this Jekyll powered blog.
+Here is a ~~small~~ post to explain how I made the tags system for this Jekyll powered blog.
 
 Many others have done it and I guess this is no big deal, but here it is, with a touch of the Neatastic flavor.
 
