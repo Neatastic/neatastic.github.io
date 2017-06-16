@@ -83,7 +83,7 @@ Here is my train of thoughts
 
  For starters, this system relies on the chronological order of posts (from oldest to newest).
 
- On one hand, tt allows me, whatever the new tags are, to detect them in the same order. Thus allowing them always the same color.
+ On one hand, it allows me, whatever the new tags are, to detect them in the same order. Thus allowing them always the same color.
 
  On the other hand, it means that adding new tags to older posts will change the others unknown tags previous colors.
 
