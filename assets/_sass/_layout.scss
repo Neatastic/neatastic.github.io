@@ -217,7 +217,7 @@ svg|g.hide-me-from-older-browsers {
   top: 2px;
   left: 0;
   bottom: 0;
-  padding: 3em 3em 0 1em;
+  padding: 3em 0em 0 1em;
   width: 30%;
   z-index: 10;
   @include body-background;
@@ -249,7 +249,10 @@ svg|g.hide-me-from-older-browsers {
     padding: 10em 3em 0 1em;
     display: none;
   }
-  @media #{$s-landscape} {}
+  @media #{$s-landscape} {
+    padding: 10em 3em 0 1em;
+    display: none;
+  }
   @media #{$xs-width} {}
   @media #{$xxs-width} {}
 
@@ -301,7 +304,7 @@ svg|g.hide-me-from-older-browsers {
     background-color: $greenyay;
   }
 }
-.share-buttons .ui.circular.button > .icon {
+.share-buttons .ui.big.circular.button .icon {
   margin-right: 0em;
 }
 .pusher {
@@ -314,7 +317,7 @@ svg|g.hide-me-from-older-browsers {
 
   .right-content {
     min-height: 100%;
-    padding: 3em 6em 0 1em;
+    padding: 3em 6em 0 0em;
 
     .featured {
       border-left-width: 0.5em !important;
@@ -368,12 +371,12 @@ svg|g.hide-me-from-older-browsers {
       width: 60%;
       margin-left: 20%;
       margin-top: 0;
-      padding: 3em 0 6em 1em;
+      padding: 3em 0 6em 0em;
     }
     @media #{$xl-width} {
       width: 60%;
       margin-left: 30%;
-      padding: 3em 0 6em 1em;
+      padding: 3em 0 6em 0em;
     }
     @media #{$lg-width} {
       width: 60%;

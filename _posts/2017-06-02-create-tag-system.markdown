@@ -4,6 +4,7 @@ title:  "Jekyll tags, the easy way :smile:"
 tags:
   - Jekyll
   - Recipe
+  - Algorithms
 sticky: false
 comments: true
 full: false
@@ -72,6 +73,106 @@ Here is my train of thoughts
 
  * Wait, what if I get several times the same color? I will have to loop on the tags inside my included component and exclude already assigned colors? No, I will have to loop on every post and every tag to get sure that whatever the final set of tags will be, they will have the same colors and avoid duplicates.
 
- * How do I get an integer value from a character? Well, I could match it against an array, but it would be bothersome to write. I can take the hexadecimal value of each letter and keep only the number part. It should do.
+ * How do I get an integer value from a character? Well, I could match it against an array, but it would be bothersome to write. I can take the hexadecimal value of each letter and keep only the number part. Finally, I decided to look only for the vowels.
 
- Once I got there, I knew how to code this feature. And here it is:
+ Once I got there, I knew how to code this feature. And I did.
+
+ And I had a "what the f... have you done!" moment. Yeah. :astonished:
+
+ For starters, this system relies on the chronological order of posts (from oldest to newest).
+
+ On one hand, tt allows me, whatever the new tags are, to detect them in the same order. Thus allowing them always the same color.
+
+ On the other hand, it means that adding new tags to older posts will change the others unknown tags previous colors.
+
+ Also, I do use an arbitrary method to get an integer value from the string, and pick a color in an arbitrary sorted array. I doesn't make sense.
+
+ Yet another case of me going wild for no good reason.
+
+ Here is the code allowing to iterate on a string characters, since it might help someone:
+{% highlight html  %}
+{% raw  %}
+     {% for tag in unregisteredTags %}
+       {% assign tagValue = 0 %}
+       {% assign tagLength = tag | size %}
+       {% for i in (0..tagLength) %}
+         {% assign letterValue = tag | slice: i  %}
+         {% case letterValue %}
+           {% when "a" %}
+           {% assign tagValue = tagValue  | plus: 1 %}
+           {% when "e" %}
+           {% assign tagValue = tagValue  | plus: 2 %}
+           {% when "i" %}
+           {% assign tagValue = tagValue  | plus: 3 %}
+           {% when "o" %}
+           {% assign tagValue = tagValue  | plus: 4 %}
+           {% when "u" %}
+           {% assign tagValue = tagValue  | plus: 5 %}
+           {% when "y" %}
+           {% assign tagValue = tagValue  | plus: 6 %}
+           {% else %}
+         {% endcase %}
+       {% endfor %}
+     the tag {{ tag }} has the {{ tagValue }} value. And it's useless.
+     {% endfor %}
+{% endraw  %}
+{% endhighlight  %}
+ So here is what I did: the order of the unknown tags will define their color. Simpler to understand, easier to implement.
+
+ And here is the whole include component looks:
+
+ {% highlight html  %}
+ {% raw  %}
+     {% assign registeredTags = "Jekyll|Recipe|Event|Meteor|Algorithms|Web Design" | split: "|" %}
+     {% assign availableColors = "blue|green|teal|blue|violet|purple|pink|brown|grey|black"  | split: "|" %}
+     {% assign unregisteredTags = ""  | split: "" %}
+     {% for post in site.posts reversed %}
+       {% for tag in post.tags %}
+         {% if registeredTags contains tag %}
+         {% else %}
+           {% assign unregisteredTags = unregisteredTags  | push: tag %}
+         {% endif %}
+       {% endfor %}
+     {% endfor %}
+     {% for tag in page.tags %}
+       {% case tag %}
+       {% when "News" %} <a class="ui tag label">News</a>
+       {% when "Jekyll" %}<a class="ui cyan tag label">Jekyll</a>
+       {% when "Meteor" %}<a class="ui red tag label">Meteor</a>
+       {% when "Web design" %}<a class="ui yellow tag label">Web Design</a>
+       {% when "Event" %}<a class="ui orange tag label">Event</a>
+       {% when "Algorithms" %}<a class="ui olive tag label">Algorithms</a>
+       {% else %}
+         {% for unregisteredTag in unregisteredTags %}
+           {% if tag == unregisteredTag %}
+             {% for color in availableColors limit:1 offset:forloop.index %}
+               <a class="ui tag label {{ color }}">{{ tag }}</a>
+             {% endfor %}
+           {% endif %}
+         {% endfor %}
+       {% endcase %}
+     {% endfor %}
+{% endraw  %}
+{% endhighlight  %}
+
+To wrap this up, let me go through the few things that could be of interest:
+  * Déclaring an array can be done either in front matter as we did earlier, either using the `split` trick:
+  {% highlight html  %}
+  {% raw  %}
+   {% assign registeredTags = "Jekyll|Recipe|Event|Meteor|Algorithms|Web Design" | split: "|" %}
+   {% endraw  %}
+   {% endhighlight  %}
+  * Pushing an item into an array is pretty straightforward :
+  {% highlight html  %}
+  {% raw  %}
+  {% assign unregisteredTags = unregisteredTags  | push: tag %}
+   {% endraw  %}
+   {% endhighlight  %}
+  * The unregistered tags will match their color using their index (`forloop.index`). I can fetch the color directly using the `limit` and `offset` filters:
+  {% highlight html  %}
+  {% raw  %}
+  {% for color in availableColors limit:1 offset:forloop.index %}
+   {% endraw  %}
+   {% endhighlight  %}
+
+Cheers! :beers:
