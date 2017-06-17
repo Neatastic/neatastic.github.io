@@ -10,7 +10,7 @@ layout: default
   <br>
   <div class="content">
     <h1 class="ui header">{{ page.title }}
-      <div class="ui sub header">{{ page.date | date: "%d %B %Y" }}{% if page.comments %} - <a href="http://blog.neatastic.com{{ url }}#disqus_thread"><i class="icon comments"></i> 0 Comments</a>{% endif %}</div>
+      <div class="ui sub header">{{ page.date | date: "%d %B %Y" }}{% if page.comments %} - <a href="http://blog.neatastic.com{{ url }}#disqus_thread" data-disqus-identifier="{{page.id}}"><i class="icon comments"></i> 0 Comments</a>{% endif %}</div>
 {% include tag.html tags=page.tags %}
     </h1>
     <div class="description">
