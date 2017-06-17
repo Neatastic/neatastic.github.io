@@ -12,7 +12,7 @@ comments: true
 ---
 I have written a few articles about Jekyll because I was using it for this blog.
 
-However, this is not a blog about Jekyll. For the next posts, I will focus on the vanilla techniques I used in the design of my [experimental website](http://www.neatastic.com)
+However, this is not a blog about Jekyll. For the next posts, I will focus on the vanilla techniques I used in the design of my [experimental website](http://www.neatastic.com) (still a work in progress).
 
 But before that, I want to draw your attention on [this marvelous piece of code](https://github.com/penibelst/jekyll-compress-html) allowing to seemlessly compress your Jekyll website without any plugin (i.e. Github-Pages compliant).
 
@@ -53,6 +53,6 @@ compress_html:
   {% endraw %}
   {% endhighlight %}
 
-  And finally, serve your Jekyll website and enjoy!
+And finally, serve your Jekyll website and enjoy!
 
-  If you like this feature, don't forget to star the [author github repo](https://github.com/penibelst/jekyll-compress-html).
+*PS: If you like this feature, don't forget to star the [author github repo](https://github.com/penibelst/jekyll-compress-html).*
