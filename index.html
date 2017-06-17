@@ -4,6 +4,7 @@ title: Neatastic - blog
 pill: 0
 ---
 <div class="ui container">
+  
   {% assign sortedPosts = site.posts | where: "sticky", "true" | sort:'date' %}
   {% for post in sortedPosts limit:1  %}
   {% assign featuredPost = post.id %}

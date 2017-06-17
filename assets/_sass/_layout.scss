@@ -452,3 +452,33 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+.box {
+  position: relative;
+}
+.corner-ribbon {
+  position: absolute;
+  right: -5px; top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 200px; height: 200px;
+  text-align: right;
+  @media #{$md-width} {
+  display:none;
+  }
+  span {
+   font-size: 16px;
+   font-weight: bold;
+   color: $backgroundColor;
+   text-transform: uppercase;
+   text-align: center;
+   line-height: 40px;
+   transform: rotate(45deg);
+   -webkit-transform: rotate(45deg);
+   width: 300px;
+   display: block;
+   background: $greenyay;
+   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+   position: absolute;
+   top: 65px; right: -65px;
+ }
+}

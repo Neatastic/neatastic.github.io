@@ -21,7 +21,7 @@ As you may know, I use Semantic-ui as front-end for this blog. It provides [an h
 
 So I decided to make a tag system for each post. At the time, I managed to make it on first try, just as I wanted it (:heart: Jekyll). So I didn't bother to check what others did.
 
-It turns out, as you may expect, that they did things in a very similar way I did.
+It turns out, as you may expect, that they did things in a very similar way.
 
 Here is the train of thoughts:
 
@@ -65,7 +65,7 @@ So what if I make an algorithm to define a color for a word, based on the only t
 
 Ok, I know there are several levels of difficulty to tackle this. I will keep it simple.
 
-Here is my train of thoughts
+The train of thoughts left the station, and here is where it went:
 
  * I need to attach a value to each letter. I will take the sum of this value, divide it by the number of letters, and depending on the result, pick the related color.
 

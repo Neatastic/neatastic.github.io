@@ -9,6 +9,8 @@ comments: true
 full: true
 excerpt_separator: <!--more-->
 ---
+{% include image.html type="left" image="/assets/images/hello_world.jpg" post_url=page.url %}
+
 Here we are! This is my first post!
 
 It might be Neatastic blog, but right now, Neatastic is me : [Antoine Cordelois](https://www.linkedin.com/in/antoine-cordelois/){:target="_blank"}.
