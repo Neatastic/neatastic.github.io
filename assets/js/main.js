@@ -1,12 +1,10 @@
 var previousScrollPosition = false;
-console.log($(window).scrollTop());
 $('.ui.dropdown')
 .dropdown();
 $('.activating.element')
 .popup()
 ;
 
-console.log("dropdown initalized");
 var t
 $('document').ready(function () {
   $('.ui.sidebar')
@@ -15,14 +13,12 @@ $('document').ready(function () {
     closable: true,
     transition: 'overlay'
   });
-  console.log($('.sidebar'));
 })
 
 resetTimer()
 
 function logout() {
   //if no animation, dialog, and we are landed
-  console.log("idle user");
   resetEyes()
 };
 
@@ -33,33 +29,7 @@ function resetTimer() {
 
   t = setTimeout(logout, 5000);
 }
-$(window).on('scroll',function (event) {
-  if (!previousScrollPosition) {
-    previousScrollPosition = $(window).scrollTop();
-  }
-  var s = $(window).scrollTop(),
-  d = $(document).height(),
-  c = $(window).height();
-  var scrollPercent = (s / (d-c)) * 100;
-  console.log(scrollPercent);
-  if (scrollPercent - previousScrollPosition > 50 ) {
-    if (scrollPercent > previousScrollPosition) {
-      $('.bender.left, .bender.right').className = "bend-up";
 
-    } else {
-      $('.bender.left, .bender.right').className = "bend-up";
-
-    }
-  } else {
-    if (scrollPercent + previousScrollPosition < -50) {
-      $('.bender.left, .bender.right').className = "bend-down";
-
-    } else {
-      $('.bender.left, .bender.right').className = "bend-down";
-    }
-  }
-  previousScrollPosition = scrollPercent;
-})
 $(function() {
   var $window = $(window),
   $body = $('body');
