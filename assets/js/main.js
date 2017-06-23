@@ -1,9 +1,5 @@
 var previousScrollPosition = false;
-$('.ui.dropdown')
-.dropdown();
-$('.activating.element')
-.popup()
-;
+var audioOn = false;
 
 var t
 $('document').ready(function () {
@@ -13,6 +9,26 @@ $('document').ready(function () {
     closable: true,
     transition: 'overlay'
   });
+  $('.ui.dropdown')
+  .dropdown({
+    on: 'hover',
+    action: 'hide'
+  });
+  $('.altion.image, .altion.video')
+  .popup({
+  })
+  ;
+  $('.altion.audio').mouseenter(function (event) {
+    if (!audioOn) {
+      var audio = new Audio( event.currentTarget.getAttribute('data-source'));
+      audioOn = true;
+      audio.play();
+      audio.onended = function() {
+        audioOn = false
+        alert("The audio has ended");
+      };
+    }
+})
 })
 
 resetTimer()

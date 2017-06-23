@@ -1,0 +1,8 @@
+<span class="ui inline dropdown">
+  <span class="text">
+    {{ include.anchor }}
+  </span>
+  <i class="dropdown icon"></i>
+<span class="ui inverted menu ">
+  {% for item in include.items %}{% assign data = item | split:"°" %}<span class="ui {% if data[2] %}active {% endif %}item"><a href="{{ data[1] }}" target="_blank">{{ data[0] }}</a></span>{% endfor %}
+</span></span>

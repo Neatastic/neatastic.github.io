@@ -38,6 +38,7 @@ window.onresize = function(event) {
 
   // refresh values if window is resized
   console.log("window resized");
+  return true
 }
 
 function moveEyes(evt) {

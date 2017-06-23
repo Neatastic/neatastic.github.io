@@ -42,13 +42,14 @@ First, I assigned to a variable the list of all the `sticky` posts sorted by dat
     {% assign sortedPosts = site.posts | where: "sticky", "true" | sort:'date' %}
 {% endraw %}
 
-Second, I made an iteration on this variable, but I stopped after the first loop. Since my variable array is sorted by date, it will only display the latest sticky post:
+Second, I made an iteration on this variable, but I stopped after the first loop. Since my variable array is sorted by date, it will only display the latest sticky post, only on the first page :
 {% raw  %}
-
-    {% for post in sortedPosts limit:1  %}
-    {% assign featuredPost = post.id %}
-      {% include post.html featured=true %}
-    {% endfor %}
+{% for post in sortedPosts limit:1  %}
+{% assign featuredPost = post.id %}
+  {% if paginator.page == 1 %}
+    {% include post.html featured=true %}
+    {% endif %}
+{% endfor %}
 {% endraw %}
 
 Third, you might wonder why this line: {% raw  %}`{% assign featuredPost = post.id %}`{% endraw %}. Well, I like being concise and it seemed to be the easiest way to avoid displaying that latest sticky post again.

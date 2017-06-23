@@ -1,0 +1,2 @@
+{% case include.type %}
+  {% when "image" %}  <a class="altion image" data-variation="inverted" data-html="<img class='ui medium rounded image' src='{{ include.image }}'>">{% when "video" %}<a class="altion video" data-variation="inverted" data-html="<video width='240' height='144' autoplay='autoplay' loop='loop' onstart='this.play();' onended='this.play();'><source src='{{ include.video }}' type='video/mp4'></video>">{% when "audio" %}<a class="altion audio" data-source="{{ include.audio }}"> {% else %}{% endcase %} {{ include.anchor }}</a>

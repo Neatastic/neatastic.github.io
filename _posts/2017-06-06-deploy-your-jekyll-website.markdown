@@ -10,7 +10,7 @@ full: false
 excerpt_separator: <!--more-->
 ---
 {% include image.html type="left" image="/assets/images/JEKYLL.jpg" post_url=page.url %}
-Today I will show you how I automated my Jekyll deployments.
+Today I will show you how I automated my Jekyll deployments and why Jekyll roxx.
 
 Even for regular git users like *yours truely*, this is a pain to use ten times a day (often more) the same lines of code. While [there are tools to automate this](https://github.com/yegor256/jekyll-github-deploy), I wanted my own version. These are simple tasks and I don't need extra software for that.
 
@@ -29,7 +29,7 @@ First, I create a Virtualbox image of an Ubuntu machine configured for Jekyll. I
 They end up with an usb key with everything required to update and manage their website, whatever their OS are.
 
 They just need to plug this usb key and launch the image, once Virtualbox is installed.
-*
+
 In there, they have their pre-configurated editing environement and a bunch of little scripts I made to ease their pain.
 
 Let's zoom on that. We'll divide it into 3 steps, all aiming to help them do stuff painlessly.

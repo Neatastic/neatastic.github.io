@@ -1,13 +1,17 @@
 {% case include.type %}
-  {% when "left" %}
-  <img class="ui left floated spaced medium rounded image" src="{{ include.image }}">
-  {% when "right" %}
-  <img class="ui right floated spaced medium rounded image" src="{{ include.image }}">
-  {% when "full" %}
-  <img class="ui fluid rounded image" src="{{ include.image }}">
-  {% when "center" %}
-  <img class="ui centered rounded medium image" src="{{ include.image }}">
+  {% when 'left' %}
+  <div class="ui left floated {{ include.image-size | default:"medium"}} spaced rounded image image-component">
+  {% when 'right' %}
+  <div class="ui right floated {{ include.image-size | default:"medium"}} spaced rounded image image-component">
+  {% when 'full' %}
+  <div class="ui fluid spaced rounded image">
+  {% when 'center' %}
+  <div class="ui centered {{ include.image-size | default:"medium"}} spaced rounded image image-component">
   {% else %}
-  <img class="ui left floated spaced medium rounded image" src="{{ include.image }}">
-
+  <div class="ui left floated  {{ include.image-size | default:"medium"}} spaced rounded image image-component">
 {% endcase %}
+<img class="ui fluid image" src="{{ include.image }}">
+{% if include.caption %}
+<h6>{{ include.caption }}</h6>
+  {% endif %}
+</div>

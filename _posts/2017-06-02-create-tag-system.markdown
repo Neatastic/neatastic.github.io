@@ -23,9 +23,9 @@ So I decided to make a tag system for each post. At the time, I managed to make 
 
 It turns out, as you may expect, that they did things in a very similar way.
 
-Here is the train of thoughts:
+Here is the train of thoughts <!--more-->:
 
-1. I want an easy  <!--more-->and declarative way to declare the tags
+1. I want an easy and declarative way to declare the tags
 2. I want a fall back in case it isn't a registered tag
 3. I want an ability to click on a tag to display all the related posts, i.e. with the same tag.
 

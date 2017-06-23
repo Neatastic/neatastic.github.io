@@ -1,5 +1,5 @@
-{% assign registeredTags = "Jekyll|Recipe|Event|Meteor|Algorithms|Web Design" | split: "|" %}
-{% assign availableColors = "blue|green|teal|blue|violet|purple|pink|brown|grey|black"  | split: "|" %}
+{% assign registeredTags = "Jekyll|Recipe|Event|Meteor|Algorithm|Web Design|UX|Vanilla JS|UX|Recipe|Website XP" | split: "|" %}
+{% assign availableColors = "green|violet|purple|pink|olive|black"  | split: "|" %}
 {% assign unregisteredTags = ""  | split: "" %}
 {% for post in site.posts reversed %}
   {% for tag in post.tags %}
@@ -16,7 +16,11 @@
   {% when "Meteor" %}<a class="ui red tag label">Meteor</a>
   {% when "Web design" %}<a class="ui yellow tag label">Web Design</a>
   {% when "Event" %}<a class="ui orange tag label">Event</a>
-  {% when "Algorithms" %}<a class="ui olive tag label">Algorithms</a>
+  {% when "Algorithm" %}<a class="ui blue tag label">Algorithms</a>
+  {% when "Vanilla JS" %}<a class="ui pink tag label">Vanilla JS</a>
+  {% when "UX" %}<a class="ui brown tag label">Vanilla JS</a>
+  {% when "Recipe" %}<a class="ui grey tag label">Recipe</a>
+  {% when "Website XP" %}<a class="ui teal tag label">Website XP</a>
   {% else %}
     {% for unregisteredTag in unregisteredTags %}
       {% if tag == unregisteredTag %}
